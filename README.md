@@ -131,8 +131,31 @@ O dashboard roda no navegador (hospedado no GitHub Pages — sem servidor própr
 ```json
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() === 'admin' || $uid === auth.uid)"
+      }
+    },
+    "history": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": ["ts"]
+    },
+    "automations": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+    },
+    "relay_names": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+    },
+    "settings": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    }
   }
 }
 ```
