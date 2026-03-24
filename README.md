@@ -1,5 +1,7 @@
 # GUBER-LAB — Sistema de Controle de Relés via ESP32 + Dashboard Web
 
+https://guberlab-sistemadecontrole.web.app/
+
 Dashboard web + firmware ESP32 para controle remoto de 8 relés em tempo real, usando MQTT, Firebase e EmailJS.
 
 ---
@@ -381,3 +383,5 @@ guberlab/
 
 Projeto de código aberto. Sinta-se livre para usar, modificar e distribuir.  
 Se usar em algum projeto, uma estrela no repositório é sempre bem-vinda! ⭐
+
+Entre em contato: Gubernavitsuporte@gmail.com
